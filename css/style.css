@@ -14,6 +14,7 @@ header {
 .caixa {
     position: relative;
     width: 940px;
+    height: auto;
     margin: 0 auto;
 }
 
@@ -28,17 +29,69 @@ nav li {
     margin: 0 0 0 15px;
 }
 
-nav a {
-    text-transform: uppercase;
-    color: #000000;
-    font-weight: bold;
-    font-size: 1.5em;
-    text-decoration: none;
-}
+
 
 nav a:hover {
     color: #C78C19;
     text-decoration: underline;
+}
+
+/* Estilo geral do menu */ .menu {
+    display: flex;
+    /* Alinha itens horizontalmente */
+    background-color: #333;
+    /* Cor de fundo do menu */
+    padding: 10px;
+    justify-content: center;
+    /* Centraliza os itens */
+}
+
+/* Itens do menu */
+.menu li {
+    margin: 0 15px;
+    /* Espaçamento entre os itens */
+}
+
+/* Links do menu */
+.menu a {
+    color: #000000;
+    /* Cor do texto */
+    font-size: 1.5em;
+    /* Tamanho da fonte */
+    font-family: Arial, sans-serif;
+    padding: 5px 10px;
+    /* Espaçamento interno */
+    border-radius: 5px;
+    /* Bordas arredondadas */
+    transition: background-color 0.3s ease;
+    /* Transição suave */
+    text-transform: uppercase;
+
+    font-weight: bold;
+
+    text-decoration: none;
+}
+
+/* Efeito ao passar o mouse */
+.menu a:hover {
+    background-color: #555;
+    /* Cor de fundo ao passar o mouse */
+    color: #fff;
+    /* Cor do texto ao passar o mouse */
+}
+
+/* Estilo responsivo (opcional) */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        /* Menu em coluna em telas menores */
+        align-items: center;
+    }
+
+    .menu li {
+        margin: 10px 0;
+        /* Espaçamento entre itens no modo coluna */
+    }
 }
 
 .produtos {
@@ -102,7 +155,8 @@ form {
     margin: 40px;
 }
 
-form label, form legend {
+form label,
+form legend {
     display: block;
     font-size: 20px;
     margin: 0 0 10px;
@@ -153,7 +207,8 @@ thead {
     font-weight: bold;
 }
 
-td, th {
+td,
+th {
     border: 1px solid #000000;
     padding: 8px 23px;
 }
@@ -260,7 +315,12 @@ p:first-line {
 }
 
 @media screen and (max-width: 1300px) {
-    .caixa, .principal, .conteudo-beneficios, .mapa-conteudo, .video {
+
+    .caixa,
+    .principal,
+    .conteudo-beneficios,
+    .mapa-conteudo,
+    .video {
         width: auto;
     }
 
@@ -270,7 +330,7 @@ p:first-line {
     }
 
     .utensilios {
-       display:none;
+        display: none;
     }
 
     h1 {
@@ -291,13 +351,16 @@ p:first-line {
         padding: 0 0 0 1em;
     }
 
-    .lista-beneficios, .imagem-beneficios {
+    .lista-beneficios,
+    .imagem-beneficios {
         width: 100%;
         margin: 1em 0;
         font-size: 1.2em;
     }
 
-    .mapa-conteudo, .imagem-beneficios, .video {
+    .mapa-conteudo,
+    .imagem-beneficios,
+    .video {
         width: 90%;
     }
 
@@ -332,4 +395,74 @@ p:first-line {
     .produto li img {
         width: 10px;
     }
+}
+
+
+
+
+
+
+html {
+    height: 100vh;
+    font-size: 14px;
+}
+
+a {
+    text-decoration: none;
+    color: #fff;
+}
+
+.degrade {
+    background: linear-gradient(to right, #727170, #fdf9fa);
+}
+
+/* ESTILO DO HEADER */
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+header img {
+    max-width: 150px;
+    margin-bottom: 20px;
+    border-radius: 50%;
+}
+
+header h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+    color: #090402;
+    font-weight: 300;
+}
+
+/* ESTILO DOS BOTÕES */
+
+section.botoes-links {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+a.link button {
+    width: 100%;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border: none;
+    border-radius: 30px;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #fff;
+    transition: .2s;
+}
+
+a.link i {
+    font-size: 1.5em;
+}
+
+a.link button:hover,
+footer a.btn-footer:hover {
+    transform: scale(1.05);
 }

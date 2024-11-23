@@ -1,101 +1,131 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width">
-        <title>Contato - Barbearia Alura</title>
 
-        <link rel="stylesheet" href="css/reset.css">
-        <link rel="stylesheet" href="css/style.css">
-        <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
-    </head>
-    <body>
-        <header>
-           <div class="caixa">
-            <h1><img src="imagens/logo.png" alt="Logo da Barbearia Alura"></h1>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Contato - Barbearia Alura</title>
+
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat&display=swap" rel="stylesheet">
+
+
+    <!-- GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap"
+        rel="stylesheet">
+    <!-- END GOOGLE FONTS -->
+</head>
+
+<body>
+    <header>
+        <div class="caixa">
+            <h1><img src="imagens/logo 00.png" alt="Logo da Barbearia Alura"></h1>
             <nav>
-                <ul>
+                <ul class="menu">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="produtos.html">Produtos</a></li>
                     <li><a href="contato.html">Contato</a></li>
                 </ul>
             </nav>
-           </div>
-        </header>
+        </div>
+    </header>
 
-        <main>
-            <form>
-                <label for="nomesobrenome">Nome e Sobrenome:</label>
-                <input type="text" id="nomesobrenome" class="input-padrao" required>
+    <main>
 
-                <label for="email">E-mail:</label>
-                <input type="email" id="email" class="input-padrao" required placeholder="seuemail@dominio.com">
+       
+        </div>
+        
+        <fieldset>
+            <br><br>
+            <legend>Horarios para agendamento</legend>
+          
+        </fieldset>
 
-                <label for="celular">Celular:</label>
-                <input type="tel" id="celular" class="input-padrao" required placeholder="(XX) XXXXX-XXXX">
+        </form>
 
-                <label for="mensagem">Mensagem:</label>
-                <textarea cols="70" rows="10" id="mensagem" class="input-padrao" required></textarea>
+        <table>
+            <thead>
+                <tr>
+                    <th>Dia</th>
+                    <th>Horário</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Segunda-feira</td>
+                    <td>8h ~ 20h</td>
+                </tr>
+                <tr>
+                    <td>Terça-feira</td>
+                    <td>8h ~ 20h</td>
+                </tr>
+                <tr>
+                    <td>Quarta-feira</td>
+                    <td>8h ~ 20h</td>
+                </tr>
+                <tr>
+                    <td>Quinta-feira</td>
+                    <td>8h ~ 20h</td>
+                </tr>
+                <tr>
+                    <td>Sexta-feira</td>
+                    <td>8h ~ 20h</td>
+                </tr>
+            </tbody>
+        </table>
 
-                <fieldset>
-                    <legend>Como prefere o nosso contato?</legend>
-                    <label for="radio-email"><input type="radio" name="contato" value="email" id="radio-email">
-                        E-mail</label>
-                    
-                    <label for="radio-celular"><input type="radio" name="contato" value="celular" id="radio-celular">Celular</label>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Enviar Mensagem para WhatsApp</title>
+        <script>
+            function enviarMensagem(event) {
+                event.preventDefault();
+    
+                // Verificar se o checkbox está marcado
+                const checkbox = document.getElementById("confirmacao");
+                if (!checkbox.checked) {
+                    alert("Por favor, marque a caixa de confirmação antes de enviar a mensagem.");
+                    return;
+                }
+    
+                // Número do WhatsApp
+                const numeroWhatsApp = "+5592999117282";
+    
+                // Mensagem a ser enviada
+                const mensagem = "Gostaria de agendar um horário";
+    
+                // Criar o link para o WhatsApp
+                const linkWhatsApp = `https://wa.me/${numeroWhatsApp.replace(/\D/g, '')}?text=${encodeURIComponent(mensagem)}`;
+    
+                // Abrir o link em uma nova aba
+                window.open(linkWhatsApp, "_blank");
+            }
+        </script>
+    </head>
+    <body>
+        <h1>Agendamento de Horário.</h1>
+        <form onsubmit="enviarMensagem(event)">
+            <label>
+                <input type="checkbox" id="confirmacao">
+                Confirmo que desejo enviar esta mensagem.
+            </label>
+            <br><br>
+            <button type="submit">Enviar Mensagem</button>
+        </form>
 
-                    <label for="radio-whatsapp"><input type="radio" name="contato" value="" id="radio-whatsapp" checked>WhatstApp</label>
-                </fieldset>
 
-                <fieldset>
-                    <legend>Qual horário prefere ser atendido?</legend>
-                    <select>
-                        <option>Manhã</option>
-                        <option>Tarde</option>
-                        <option>Noite</option>
-                    </select>
-                </fieldset>
 
-                <label class="checkbox"><input type="checkbox" checked>Gostaria de receber nossas novidades por e-mail?</label>
 
-                <input type="submit" value="Enviar Formulário" class="enviar">
-            </form>
+    </main>
 
-            <table>
-                <thead>
-                    <tr>
-                        <th>Dia</th>
-                        <th>Horário</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Segunda-feira</td>
-                        <td>8h ~ 20h</td>
-                    </tr>
-                    <tr>
-                        <td>Terça-feira</td>
-                        <td>8h ~ 20h</td>
-                    </tr>
-                    <tr>
-                        <td>Quarta-feira</td>
-                        <td>8h ~ 20h</td>
-                    </tr>
-                    <tr>
-                        <td>Quinta-feira</td>
-                        <td>8h ~ 20h</td>
-                    </tr>
-                    <tr>
-                        <td>Sexta-feira</td>
-                        <td>8h ~ 20h</td>
-                    </tr>
-                </tbody>
-            </table>
-        </main>
+    <footer>
 
-        <footer>
-            <img src="imagens/logo-branco.png" alt="Logo da Barbearia Alura">
-            <p class="copyright">&copy; Copyrigth Barbearia Alura - 2019</p>
-        </footer>
-    </body>
+        <img src="imagens/logo-branco.png" alt="Logo da Barbearia Alura">
+        <p class="copyright">&copy; Copyrigth Barbearia Alura - 2019</p>
+    </footer>
+</body>
+
 </html>
